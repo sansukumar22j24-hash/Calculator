@@ -1,27 +1,26 @@
-package Calculator;
-
-public  abstract class Calculator implements CalculatorInterface {
-    private int calculatorId;
-    private  int result;
-
-    // private int num1, num2, num3;
-    private String calculatorType;
-    private UserInterface user;
-
-
-    public void compute(){
-        int result = this.getUser().getNum1()+this.getUser().getNum2();
-        this.setResult(result);
-        System.out.println("Over "+getResult());
+package Calculator_Ad;
+public abstract class Calculator implements CalculatorInterface{
+    private String calculatorId;
+    private int result;
+    private int num1;
+    private int num2;
+    private int  num3;
+    private  UserInterface user;
+    public UserInterface getUser() {
+        return user;
     }
 
-    public String getCalculatorType() {
-        return calculatorType;
+    public void setUser(UserInterface user) {
+        this.user = user;
+    }
+    public String getCalculatorId() {
+        return calculatorId;
     }
 
-    public void setCalculatorType(String calculatorType) {
-        this.calculatorType = calculatorType;
+    public void setCalculatorId(String calculatorId) {
+        this.calculatorId = calculatorId;
     }
+
     public int getResult() {
         return result;
     }
@@ -30,30 +29,46 @@ public  abstract class Calculator implements CalculatorInterface {
         this.result = result;
     }
 
-
-    public void setCalculatorId(int calculatorId) {
-        this.calculatorId = calculatorId;
+    public int getNum1() {
+        return num1;
     }
 
-    public UserInterface getUser() {
-        return user;
+    public void setNum1(int num1) {
+        this.num1 = num1;
     }
-    public void setUser(UserInterface user) {
-        this.user = user;
+
+    public int getNum2() {
+        return num2;
     }
-    public int calculate(int num1){
-        return num1+num1;
+
+    public void setNum2(int num2) {
+        this.num2 = num2;
     }
-    public int calculate(int num1,int num2){
-        return num1+num2;
+
+    public int getNum3() {
+        return num3;
     }
-    public int calculate(int num1,int num2,int num3){
-        return num1+num2+num3;
+
+    public void setNum3(int num3) {
+        this.num3 = num3;
+    }
+    public void compute(){
+        int result= this.getUser().getNum1()+ this.getUser().getNum2();
+        this.setResult(result);
+        System.out.println("Result : "+this.getResult());
+    }
+
+    public int calculate(int a){
+        return a+a;
+    }
+    public int calculate(int a, int b){
+        return a+b;
     }
 
 
-    @Override
-    public int getCalculatorId() {
-        return calculatorId;
-    }
+  public int calculate(int a, int b, int c){
+      return a+b+c;
+  }
+
+
 }

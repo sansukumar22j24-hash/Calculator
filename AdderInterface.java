@@ -1,8 +1,5 @@
-package Calculator;
+package Calculator_Ad;
 
-public interface AdderInterface extends CalculatorInterface{
-    public int calculate(int num1,int num2);
-    public int calculate(int num1);
-    public int calculate(int num1,int num2,int num3);
+public interface AdderInterface extends CalculatorInterface {
     public void compute();
 }
